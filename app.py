@@ -35,14 +35,14 @@ if submitted:
         "favorite_subject": favorite_subject
     }
 
-    supabase.table("student_survey").insert(new_data).execute()
+    supabase.table("student_life").insert(new_data).execute()
     st.success("데이터가 저장되었습니다.")
 
 st.divider()
 
 st.subheader("저장된 데이터 확인")
 
-response = supabase.table("student_survey").select("*").execute()
+response = supabase.table("student_life").select("*").execute()
 df = pd.DataFrame(response.data)
 
 st.dataframe(df)
